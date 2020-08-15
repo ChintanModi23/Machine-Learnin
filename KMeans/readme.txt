@@ -1,0 +1,16 @@
+Python program to output a k-means clustering. This program
+would have similar structure to the nearest means program. Follow
+the pseudocode given in the course slides. 
+
+The input to your program is a dataset and number of cluster k.
+The output is in the same format of label files we have been using
+in the course. So if the clustering is C0 = {0, 2, 3}, C1 = {1, 4}
+and C2 = {5} then the output would be
+
+0 0
+1 1
+0 2
+0 3
+1 4
+2 5
+

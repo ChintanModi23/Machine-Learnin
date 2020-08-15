@@ -33,3 +33,33 @@ w = (1.4605574252399243, -0.4595542036671061)
 w0 = -2.0024682128830427
 Dist to origin= 1.3078203832146862
 
+Added an adaptive eta setting for Hinge Loss. 
+Between the compute dellf and updatew code portions
+insert the following pseudocode
+
+eta_list = [1, .1, .01, .001, .0001, .00001, .000001, .0000001, .00000001, .000000001, .0000000001, .00000000001 ]
+bestobj = 1000000000000
+for k in range(0, len(eta_list), 1):
+
+  eta = eta_list[k]
+  
+  ##update w
+  ##insert code here for w = w + eta*dellf
+
+  ##get new error
+  error = 0
+  for i in range(0, rows, 1):
+    if(trainlabels.get(i) != None):
+      ##update error
+      ##insert code to update the loss (which we call error here)
+
+  obj = error
+
+  ##update bestobj and best_eta
+  ##insert code here
+
+  ##remove the eta for the next
+  ##insert code here for w = w - eta*dellf
+
+eta = best_eta
+
